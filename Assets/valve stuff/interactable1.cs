@@ -6,13 +6,13 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class interactable : MonoBehaviour
+public class interactable1 : MonoBehaviour
 {
     public bool inrange=false;
     public GameObject text;
-    public GameObject rotable;
-    public float currentrotation=0;
-    public float rotationspeed = 10;
+    
+    
+    
     public bool activated=false;
     public GameObject steam;
     
@@ -42,34 +42,16 @@ public class interactable : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             activated= true;
-            text.SetActive( false);
-            steam.SetActive(false);
+            ;
+            steam.SetActive(true);
         }
         Interact();
     }
 
     void Interact() 
     {
-        if (activated)
-        {
-
-            if(currentrotation<=3f)
-            {
-                rotable.transform.rotation = quaternion.Euler(0, -90, currentrotation);
-
-
-                currentrotation += rotationspeed*Time.deltaTime;
-
-
-            }
-            
-
-            
-
-            
-            
-
-        }
+        
+        
         
 
 
