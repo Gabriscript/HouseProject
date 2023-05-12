@@ -4206,7 +4206,7 @@ MonoBehaviour:
   lightContainer: {fileID: 306511583}
   activatedGen: 0
   steam: {fileID: 573357802}
-  shackdoor: {fileID: 0}
+  shackdoor: {fileID: 2070551696}
 --- !u!135 &1307693427
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6447,6 +6447,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03e880133708442c4b8533df94284924, type: 3}
+--- !u!1 &2070551696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 03e880133708442c4b8533df94284924,
+    type: 3}
+  m_PrefabInstance: {fileID: 2070551695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2086446526 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010497144196, guid: 6bc723721c741354c88f65e65b476d16,
