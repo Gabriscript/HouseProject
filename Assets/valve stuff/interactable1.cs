@@ -13,8 +13,9 @@ public class interactable1 : MonoBehaviour
     public GameObject   lightContainer;
     
     
-    public bool activated=false;
+    public bool activatedGen=false;
     public GameObject steam;
+    public GameObject shackdoor;
 
     private void Start() {
         steam.SetActive(false);
@@ -23,7 +24,7 @@ public class interactable1 : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {  
-       if (!activated)
+       if (!activatedGen)
         if(collision.tag=="Player")
         {
         inrange= true;
@@ -33,7 +34,7 @@ public class interactable1 : MonoBehaviour
     }
     void OnTriggerExit(Collider collision)
     {
-       if(!activated)
+       if(!activatedGen)
         if (collision.tag == "Player") 
         {
             inrange = false;
@@ -43,14 +44,16 @@ public class interactable1 : MonoBehaviour
     }
     void Update()
     {
-        if(!activated)
+        if(inrange) 
+        if(!activatedGen)
         if (Input.GetKeyDown(KeyCode.F))
         {
-            activated= true;
-            
+            activatedGen = true;
+            text.SetActive(false);
             steam.SetActive(true);
                 lightContainer.SetActive(true);
-        }
+                    shackdoor.SetActive(false);
+                }
         Interact();
     }
 
