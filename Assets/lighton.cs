@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class lighton : MonoBehaviour
 {
+   
     interactable1 interact;
     void Start()
     {
@@ -15,7 +16,7 @@ public class lighton : MonoBehaviour
     void Update()
     {  
         if(interact.activated == true) {
-            gameObject.SetActive(true); 
+           this.gameObject.SetActive(true); 
         }
     }
 }
