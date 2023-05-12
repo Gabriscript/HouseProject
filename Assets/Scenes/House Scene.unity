@@ -2168,7 +2168,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &584440265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4387,6 +4387,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2742989832990073080, guid: 89533a34ca358934b93d6e50cd9de5b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2742989832990073086, guid: 89533a34ca358934b93d6e50cd9de5b8,
         type: 3}
       propertyPath: m_Enabled
@@ -5276,7 +5281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1791002925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5288,8 +5293,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.002378, y: 3.604134, z: 6.089615}
-  m_Center: {x: -0.35450077, y: 1.302067, z: -0.3924837}
+  m_Size: {x: 19.871925, y: 3.604134, z: 10.868467}
+  m_Center: {x: 3.0802708, y: 1.302067, z: 2.1542988}
 --- !u!114 &1791002926
 MonoBehaviour:
   m_ObjectHideFlags: 0
