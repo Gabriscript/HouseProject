@@ -17,7 +17,7 @@ public class interactable1 : MonoBehaviour
     public GameObject steam;
     
     void OnTriggerEnter(Collider collision)
-    {
+    {  
        if (!activated)
         if(collision.tag=="Player")
         {
@@ -42,7 +42,7 @@ public class interactable1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             activated= true;
-            ;
+            
             steam.SetActive(true);
         }
         Interact();
