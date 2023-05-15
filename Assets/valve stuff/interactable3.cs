@@ -25,23 +25,25 @@ public class interactable3 : MonoBehaviour
     void OnTriggerEnter(Collider collision)
     {  
        if (!activatedkey)
-        if(collision.tag=="Player")
+        if(!getin)
+            if(collision.tag=="Player")
         {
-        getin= true;
+        inrange= true;
         text.SetActive(true);
         }
        if (getin) 
         if(collision.tag=="Player")
         {
-            getin = true;
-            text.SetActive(true);
+            inrange = true;
+            Getin.SetActive(true);
         }
         
     }
     void OnTriggerExit(Collider collision)
     {
        if(!activatedkey)
-        if (collision.tag == "Player") 
+        if(!getin) 
+            if (collision.tag == "Player") 
         {
             inrange = false;
             text.SetActive(false);
@@ -50,7 +52,7 @@ public class interactable3 : MonoBehaviour
             if(collision.tag=="player")
         {
             inrange = false;
-            text.SetActive(false);
+            Getin.SetActive(false);
         }
     }
     void Update()
@@ -59,12 +61,24 @@ public class interactable3 : MonoBehaviour
         if(!activatedkey)
         if (Input.GetKeyDown(KeyCode.F))
         {
-            activatedkey= true;
-            text.SetActive(false);
-            animator.Play("cardooropening");
-
+                    if (!activatedkey)
+                    {
+                        getin = true;
+                        text.SetActive(false);
+                        Getin.SetActive(true);
+                        animator.Play("cardooropening");
+                    }
+                    
+                       
                 }
         Interact();
+        if (getin)
+        {
+            Color alpha = fade.color;
+            alpha.a += 0.2f * Time.deltaTime;
+            fade.color = alpha;
+
+        }
     }
 
     void Interact() 
