@@ -17,6 +17,7 @@ public class interactable3 : MonoBehaviour
     public Animator animator;
     bool getin=false;
     public Image fade;
+    bool getin2;
     private void Start() {
         
         
@@ -68,11 +69,17 @@ public class interactable3 : MonoBehaviour
                         Getin.SetActive(true);
                         animator.Play("cardooropening");
                     }
-                    
+                    if(getin)
+                    {
+
+                        getin2= true;
+                        Getin.SetActive(false);
+
+                    }
                        
                 }
         Interact();
-        if (getin)
+        if (getin2)
         {
             Color alpha = fade.color;
             alpha.a += 0.2f * Time.deltaTime;
