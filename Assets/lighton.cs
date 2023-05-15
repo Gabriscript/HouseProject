@@ -15,7 +15,7 @@ public class lighton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {  
-        if(interact.activated == true) {
+        if(interact.activatedGen == true) {
            this.gameObject.SetActive(true); 
         }
     }

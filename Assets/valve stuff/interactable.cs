@@ -15,6 +15,8 @@ public class interactable : MonoBehaviour
     public float rotationspeed = 10;
     public bool activated=false;
     public GameObject steam;
+    public GameObject gaswall;
+    
     
     void OnTriggerEnter(Collider collision)
     {
@@ -38,12 +40,15 @@ public class interactable : MonoBehaviour
     }
     void Update()
     {
+        if(inrange) 
         if(!activated)
         if (Input.GetKeyDown(KeyCode.F))
         {
             activated= true;
             text.SetActive( false);
             steam.SetActive(false);
+            gaswall.SetActive(false);
+            
         }
         Interact();
     }

@@ -6,25 +6,23 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class interactable1 : MonoBehaviour
+public class interactable2 : MonoBehaviour
 {
     public bool inrange=false;
     public GameObject text;
-    public GameObject   lightContainer;
-    
-    
-    public bool activatedGen=false;
-    public GameObject steam;
-    public GameObject shackdoor;
+
+
+    bool activatedkey;
+    public GameObject key;
 
     private void Start() {
-        steam.SetActive(false);
-        lightContainer.SetActive(false);
+        
+        
     }
 
     void OnTriggerEnter(Collider collision)
     {  
-       if (!activatedGen)
+       if (!activatedkey)
         if(collision.tag=="Player")
         {
         inrange= true;
@@ -34,7 +32,7 @@ public class interactable1 : MonoBehaviour
     }
     void OnTriggerExit(Collider collision)
     {
-       if(!activatedGen)
+       if(!activatedkey)
         if (collision.tag == "Player") 
         {
             inrange = false;
@@ -45,14 +43,12 @@ public class interactable1 : MonoBehaviour
     void Update()
     {
         if(inrange) 
-        if(!activatedGen)
+        if(!activatedkey)
         if (Input.GetKeyDown(KeyCode.F))
         {
-            activatedGen = true;
+            
             text.SetActive(false);
-            steam.SetActive(true);
-                lightContainer.SetActive(true);
-                    shackdoor.SetActive(false);
+            
                 }
         Interact();
     }
