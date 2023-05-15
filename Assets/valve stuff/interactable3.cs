@@ -4,18 +4,19 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Pool;
 using UnityEngine.UI;
 
-public class interactable2 : MonoBehaviour
+public class interactable3 : MonoBehaviour
 {
     public bool inrange=false;
     public GameObject text;
-
+    public GameObject Getin;
 
     bool activatedkey;
-    public GameObject key;
-    public GameObject cargetincar;
-
+    public Animator animator;
+    bool getin=false;
+    public Image fade;
     private void Start() {
         
         
@@ -26,8 +27,14 @@ public class interactable2 : MonoBehaviour
        if (!activatedkey)
         if(collision.tag=="Player")
         {
-        inrange= true;
+        getin= true;
         text.SetActive(true);
+        }
+       if (getin) 
+        if(collision.tag=="Player")
+        {
+            getin = true;
+            text.SetActive(true);
         }
         
     }
@@ -39,7 +46,12 @@ public class interactable2 : MonoBehaviour
             inrange = false;
             text.SetActive(false);
         }
-        
+        if (getin) 
+            if(collision.tag=="player")
+        {
+            inrange = false;
+            text.SetActive(false);
+        }
     }
     void Update()
     {
@@ -49,8 +61,8 @@ public class interactable2 : MonoBehaviour
         {
             activatedkey= true;
             text.SetActive(false);
-        key.SetActive(false);
-            cargetincar.SetActive(true);
+            animator.Play("cardooropening");
+
                 }
         Interact();
     }
