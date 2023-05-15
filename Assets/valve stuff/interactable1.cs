@@ -16,6 +16,8 @@ public class interactable1 : MonoBehaviour
     public bool activatedGen=false;
     public GameObject steam;
     public GameObject shackdoor;
+    public GameObject houseInterior;
+
 
     private void Start() {
         steam.SetActive(false);
@@ -53,6 +55,7 @@ public class interactable1 : MonoBehaviour
             steam.SetActive(true);
                 lightContainer.SetActive(true);
                     shackdoor.SetActive(false);
+                    houseInterior.SetActive(false);
                 }
         Interact();
     }
